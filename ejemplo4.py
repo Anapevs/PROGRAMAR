@@ -39,12 +39,29 @@ class Car (Vehicle):
 class Bike (Vehicle):
     def start_engine (self):
         if not self.is_available:
-            return f"El motor del coche {self.brand} esta en marcha"
+            return f"La bicicleta {self.brand} esta en marcha"
         else:
-            return f"El coche {self.brand} no esta disponible"
+            return f"La bicicleta {self.brand} no esta disponible"
             
     def stop_engine (self):
         if self.is_available:
-            return f"El motor del coche {self.brand} se ha detenido"
+            return f"La bicicleta {self.brand} se ha detenido"
         else:
-            return f"El coche {self.brand} no esta disponible"
+            return f"La bicicleta {self.brand} no esta disponible"
+        
+class Truck (Vehicle):
+    def start_engine (self):
+        if not self.is_available:
+            return f"El camión {self.brand} esta en marcha"
+        else:
+            return f"El camión {self.brand} no esta disponible"
+            
+    def stop_engine (self):
+        if self.is_available:
+            return f"El camión {self.brand} se ha detenido"
+        else:
+            return f"El camión {self.brand} no esta disponible"
+class Customer:
+        def __init__(self, name):
+            self.name = name
+            self.pucharsed_vehicle = []
