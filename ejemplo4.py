@@ -1,5 +1,6 @@
 class Vehicle :
     def __init__(self, brand, model, price):
+        #Encapsulacion
         self.brand = brand
         self.model = model
         self.price = price
@@ -10,7 +11,7 @@ class Vehicle :
             print (f"El vehiculo {self.brand} ha sido vendido")
         else:
             print (f"El vehiculo {self.brand} no esta disponible")
-
+    #abstraccion
     def check_available (self):
         return self.isAvailable
     
@@ -22,20 +23,21 @@ class Vehicle :
     
     def stop_engine (self):
         raise NotImplementedError ("Este metodo debe ser implementado por la subclase")
-
-class Car (Vehicle): 
+#Herencia
+class Car (Vehicle):
+    #Polimorfismo
     def start_engine (self):
         if not self.is_available:
             return f"El motor del coche {self.brand} esta en marcha"
         else:
             return f"El coche {self.brand} no esta disponible"
-            
+    #Polimorfismo       
     def stop_engine (self):
         if self.is_available:
             return f"El motor del coche {self.brand} se ha detenido"
         else:
             return f"El coche {self.brand} no esta disponible"
-        
+#herencia        
 class Bike (Vehicle):
     def start_engine (self):
         if not self.is_available:
@@ -48,7 +50,7 @@ class Bike (Vehicle):
             return f"La bicicleta {self.brand} se ha detenido"
         else:
             return f"La bicicleta {self.brand} no esta disponible"
-        
+#Herencia        
 class Truck (Vehicle):
     def start_engine (self):
         if not self.is_available:
@@ -95,7 +97,7 @@ class Dealership:
     def show_available_vehicle(self):
         print ("Vehiculos disponibles en la tienda")
         for vehicle in self.inventory:
-            if vehicle.check_available ():
+            if vehicle.check_available():
                 print(f"- {vehicle.brand} por {vehicle.get_price()}")
 
 car1 = Car ("Toyota", "Corolla", 20000)
