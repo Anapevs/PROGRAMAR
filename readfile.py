@@ -8,6 +8,10 @@
 """with open('texto.txt', 'r') as file:
     lines = file.readlines()
     print (lines)"""
+#to add info to a file
+"""with open('texto.txt', 'a') as file:
+    file.write ("\n\nBy: Ana")"""
 
-with open('texto.txt', 'a') as file:
-    file.write ("\n\nBy: Ana")
+#Sobreescribir el texto
+"""with open('texto.txt', 'w') as file:
+    file.write("\n\nBy: Ana")"""
